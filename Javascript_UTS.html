@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> JavaScript UTS WEB </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<br>
+<br>
+<br>
+<center><button onclick="myFunction()">Apakah Anda Berminat Untuk Berkuliah di ITTS</button>
+
+<p id="demo"></p>
+
+<script>function myFunction() {
+    var x;
+    if (confirm("Tekan Tombol!") == true) {
+        x = "Ya, Saya Berminat";
+    } else {
+        x = "Tidak, Saya Tidak Berminat";
+    }
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+</center>
+</body>
+</html>
