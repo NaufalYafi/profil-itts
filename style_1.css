@@ -1,0 +1,141 @@
+/* font */
+@font-face {
+    font-family: 'Magical-Night';
+    src: url(Magical-Night.woff) format('woff');
+}
+
+/* Style Utama */
+body{
+    font: 18px/36px 'Magical-Night', 'Arial Narrow', arial, sans-serif;
+    background-image: url(ittelkom.jpg);
+}   
+
+h1{
+    font-size: 50px;
+    margin: 50px 0;
+    text-align: center;
+    color: rgb(255, 68, 68);
+    width: 800px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px rgba(232, 0, 0, 0.3);
+    background-color: rgb(255, 255, 255);
+    text-decoration: 1px 2px 2px rgb(255, 0, 0);
+}
+
+.container{
+    width: 800px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 10px;
+    box-shadow: 5px 10px 8px 10px rgba(232, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.gallery li{
+    width: 120px;
+    height: 120px;
+    border: 5px solid rgb(70, 70, 70);
+    float: left;
+    margin-left: 10px;
+    position: relative;
+}
+
+.gallery li,
+.gallery li img,
+.gallery li span{
+    border-radius: 50%;
+}
+
+
+.gallery li span{
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(205, 205, 205, 0.5);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    color: rgb(0, 0, 0);
+    text-overflow: 1px 1px 1px rgb(0, 0, 0);
+    opacity: 0;
+    transition: .3s;
+    transform: scale(0) rotate(0);
+}
+
+.gallery li a:hover span{
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.clear{
+    clear: both;
+}
+
+/* overlay */
+.overlay{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0);
+    z-index: 9999;
+    transition: .8;
+}
+
+ul{
+    text-decoration: none;
+}
+
+li::marker{
+    color: white;
+}
+
+.overlay:target{
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+    text-align: center;
+    padding: 100 0;
+}
+
+.overlay img{
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+}
+
+.overlay:target img{
+    animation: zoomDanFade 1s;
+}
+
+.overlay .close{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    margin-left: -20px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: 1px solid white;
+    line-height: 14px;
+    padding: 5px;
+}
+
+
+/* Animasi */
+@keyframes zoomDanFade{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
